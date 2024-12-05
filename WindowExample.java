@@ -27,8 +27,8 @@ public class WindowExample extends JFrame{
         areaPanel.setLayout(new BorderLayout());
 
         topPanel = new JPanel();
-        JLabel labelTop = new JLabel("You are a CS376 rockstar! Today:");
-        //JLabel labelTop = new JLabel("You are a CS376 rockstar! Today:" + addTime());
+        //JLabel labelTop = new JLabel("You are a CS376 rockstar! Today:");
+        JLabel labelTop = new JLabel("You are a CS376 rockstar! Today:" + addTime());
 
         //1. left panel creation here
         leftPanel = new JPanel();
@@ -72,8 +72,8 @@ public class WindowExample extends JFrame{
         });
 
         //7. labels with image signature 
-        JLabel labelBottom = new JLabel("Image Signature ");
-        //JLabel labelBottom = new JLabel("Image Signature " + imgSignature(imgHappy));
+        //JLabel labelBottom = new JLabel("Image Signature ");
+        JLabel labelBottom = new JLabel("Image Signature " + imgSignature(imgHappy));
         labelBottom.setBounds(10,0,300,50);
 
         //8. add top panels to frame
@@ -102,10 +102,16 @@ public class WindowExample extends JFrame{
    	}
 
     // 14. addTime method imoplementation
-
+    private String addTime(){
+      String date = new SimpleDateFormat("yyyy-MM-dd:hh:mm:ss zzz yyyy").format(Calendar.getInstance().getTime());
+      return date;
+    }
 
     // 15. imgSignature method imoplementation
-
+    private String imgSignature(ImageIcon img){
+      int hash = System.identityHashCode(img);
+      return String.valueOf(hash);
+    }
 
 }
 
