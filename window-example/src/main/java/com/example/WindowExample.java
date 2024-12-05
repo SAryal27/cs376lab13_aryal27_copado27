@@ -1,3 +1,4 @@
+package com.example;
 import java.awt.*; // import OS agnostic swing libraries
 import java.awt.event.*;
 import java.awt.event.WindowAdapter;
@@ -41,15 +42,17 @@ public class WindowExample extends JFrame{
         //4. happy and sad button change image
 
         //5. happy sad images creation here
-        ImageIcon imgHappy = new ImageIcon("images/smiley.png");
+        ImageIcon imgHappy = new ImageIcon(getClass().getResource("/images/smiley.png"));
         JLabel imgLabelHappy = new JLabel(imgHappy);
         JScrollPane scrollPaneHappy = new JScrollPane(imgLabelHappy);
 scrollPaneHappy.setBounds(10, 50, imgHappy.getIconWidth()+10, imgHappy.getIconHeight()+10);
 
-ImageIcon imgSad = new ImageIcon("images/frowny.png");
+ImageIcon imgSad = new ImageIcon(getClass().getResource("/images/frowny.png"));
 JLabel imgLabelSad = new JLabel(imgSad);
 JScrollPane scrollPaneSad = new JScrollPane(imgLabelSad);
 scrollPaneSad.setBounds(10, 50, imgSad.getIconWidth()+10, imgSad.getIconHeight()+10);
+
+
         //6. OK and NOT button listeners to chanage images
 
         //7. labels with image signature 
