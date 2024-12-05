@@ -77,7 +77,8 @@ public class WindowExample extends JFrame{
         bottomPanel.add(scrollPaneSad);
 
         //13. add bottom panel to frame
- 
+        areaPanel.add(BorderLayout.PAGE_END,bottomPanel);
+        
         this.add(areaPanel);
         this.pack();
         this.setVisible(true);
